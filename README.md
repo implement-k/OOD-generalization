@@ -1,7 +1,7 @@
 # OOD-generalization
 keyword: Computer Vision, OOD Generalization, Robustness, Resnet-18, IBN-Net
 26.02(연구실 과제)
----
+
 ### Problem
 Pre-trained 모델 사용이 제한된 from-scratch 학습 조건에서, ResNet-18 모델 만으로 Photo 도메인에서 학습하고 Sketch 도메인으로 일반화해야 하는 과제
 
@@ -23,4 +23,14 @@ Pre-trained 모델 사용이 제한된 from-scratch 학습 조건에서, ResNet-
 ·	그 외에는 학습 기법과 데이터 증강은 결과에 대한 효과가 독립적이라고 가정하고 성능이 향상되는 최적의 조합을 선별.
 
 ### 코드 설명
-·	sigle view 
+·	sigle view model.ipynb
+  - cutmix, mixup을 제외한 상태로 single view best model 저장.
+  - cutmix, mixup을 추가한 상태로 이전 best model로 부터 학습 시작 후 single view best model 2 저장
+    
+· multi view model.ipynb
+  - single view best model 2로 부터 학습 시작(soble 제외한 상태로) 후 best model 저장.
+  - 저장한 best model로 부터 sobel 추가 후 multi view best model
+  - 이후 single best model, single best model2 불러온 후 앙상블 실행
+
+
+
